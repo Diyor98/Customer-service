@@ -1,6 +1,9 @@
 from django.urls import path
 
 from accounts.views import (
+    registerPage,
+    loginPage,
+    logoutUser,
     home, 
     products,
     customer,
@@ -10,6 +13,9 @@ from accounts.views import (
 )
 
 urlpatterns = [
+    path('register/',registerPage,name='register'),
+    path('login/',loginPage,name='login'),
+    path('logout/',logoutUser,name='logout'),
     path('',home, name='home'),
     path('products/',products,name ='products'),
     path('customer/<int:pk>',customer,name='customer'),
